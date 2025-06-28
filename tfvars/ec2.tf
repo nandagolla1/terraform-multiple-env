@@ -14,7 +14,7 @@ resource "aws_instance" "roboshop" {
 }
 
 resource "aws_security_group" "allow_all" {
-  name        = "allow_all"
+  name        = "${var.project}-${var.sg_name}-${var.environment}" # allow-all-dev
   description = var.sg_description
 
     tags = merge(
